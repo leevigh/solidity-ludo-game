@@ -24,6 +24,10 @@ contract Ludo {
         return diceRoll;
     }
 
+    function getPlayerPosition() external view returns (uint16) {
+        return players[msg.sender].position;
+    }
+
     function start() external {
         players[msg.sender] = Player(0, true, false);
     }
