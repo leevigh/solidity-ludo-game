@@ -5,6 +5,7 @@ contract Ludo {
 
     uint8 public totalGamePath;
 
+    event PlayerWon(address);
 
     constructor() {
         totalGamePath = 57;
@@ -46,6 +47,7 @@ contract Ludo {
 
         if (players[msg.sender].position >= 57) {
             players[msg.sender].position = 57;
+            emit PlayerWon(msg.sender);
         }
     }
 
